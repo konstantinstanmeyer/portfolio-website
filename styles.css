@@ -1,0 +1,66 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Teko" !important;
+    font-weight: 300;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    background-color: #181818;
+}
+
+#navbar {
+    width: 55rem;
+    height: 7rem;
+    background: #181818;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+}
+
+#name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-left: 6rem;
+    color: rgb(235, 235, 235)
+}
+
+#name h3 {
+    margin: 0;
+    font-weight: 400 !important;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    height: 1.4rem;
+}
+
+#links {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+#links a {
+    text-decoration: none;
+    color: rgb(235, 235, 235);
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-right: 4rem;
+    transition: 0.2s linear;
+}
+
+#links a:hover {
+    color: rgb(124, 124, 124);
+}
+
+#info img {
+    width: 20rem;
+}
