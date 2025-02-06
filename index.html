@@ -10,7 +10,12 @@
     <link href="styles.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
+<body id="content">
+    <div id="landing">
+        <div id="landing-container">
+            <p>landing</p>
+        </div>
+    </div>
     <div id="navbar">
         <div id="name">
             <h3>KONSTANTIN</h3>
@@ -24,18 +29,37 @@
     </div>
     <div id="info">
         <div id="personal-info">
-            <p></p>
+            <p id="personal-description">
+                Konstantin builds full-stack solutions that just work&mdash;across every device.
+            </p>
+            <div id="personal-divider"/>
+            <p id="additional-info">Currently developing websites for businesses, creators, and personal aspirations</p>
             <div id="social-links">
-                <div>
-                    <img />
-                </div>
-                <img />
-                <img />
+                <a href="https://github.com/konstantinstanmeyer" target="_blank">
+                    <img src="public/github.png"/>
+                </a>
+                <a href="https://www.linkedin.com/in/konstantin-stanmeyer/" target="_blank">
+                    <img src="public/linkedin.png" />
+                </a>
+                <a href="https://dev.to/konstantinstanmeyer" target="_blank">
+                    <img src="public/dev-to.png"/>
+                </a>
             </div>
         </div>
-        <div id="portait container">
+        <div id="portrait-container">
             <img src="public/portrait.jpeg"/>
         </div>
     </div>
+    <div id="gerald">
+
+    </div>
+    <script>
+        const landingScreen = document.getElementById('landing');
+        const mainContent = document.getElementById('content');
+        
+        setTimeout(() => {
+          landingScreen.style.display = 'none';
+        }, 1000); // 5000 milliseconds = 5 seconds
+      </script>
 </body>
 </html>
