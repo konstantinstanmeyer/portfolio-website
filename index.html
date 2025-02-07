@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body id="content">
@@ -30,10 +31,10 @@
     <div id="info">
         <div id="personal-info">
             <p id="personal-description">
-                Konstantin builds full-stack solutions that just work&mdash;across every device.
+                Konstantin builds full-stack solutions that just work.
             </p>
             <div id="personal-divider"/>
-            <p id="additional-info">Currently developing websites for businesses, creators, and personal aspirations</p>
+            <p id="additional-info">I make full-stack applications for businesses and creators as a <span>freelance developer</span></p>
             <div id="social-links">
                 <a href="https://github.com/konstantinstanmeyer" target="_blank">
                     <img src="public/github.png"/>
@@ -51,7 +52,61 @@
         </div>
     </div>
     <div id="gerald">
-
+        
+    </div>
+    <div id="gerald" class="project fade-on-scroll">
+        <div class="project-images">
+            <img class="project-background" src="public/fingerprint.png" />
+            <img class="project-gif" src="public/exposure.jpg" />
+        </div>
+        <div class="project-details">
+            <div class="project-num">
+                <div class="underliner"></div>
+                <p class="project-num-info">01/03</p>
+            </div>
+            <p class="project-name">EXPOSURE</p>
+            <p class="project-description">A social-media-adjacent site intended to expose users to new ideas, and to act as an "anti-algorithm". In a world that's slowly feeding everyone the same information there must be a way to escape this echo-chamber</p>
+            <div class="project-ext-links">
+                <a class="project-live">Live site</a>
+                <a class="project-github"></a>
+            </div>
+        </div>
+    </div>
+    <div id="exposure" class="project fade-on-scroll">
+        <div class="project-details">
+            <div class="project-num">
+                <div class="underliner"></div>
+                <p class="project-num-info">02/03</p>
+            </div>
+            <p class="project-name">EXPOSURE</p>
+            <p class="project-description">A social-media-adjacent site intended to expose users to new ideas, and to act as an "anti-algorithm". In a world that's slowly feeding everyone the same information there must be a way to escape this echo-chamber</p>
+            <div class="project-ext-links">
+                <a class="project-live">Live site</a>
+                <a class="project-github"></a>
+            </div>
+        </div>
+        <div class="project-images">
+            <img class="project-background" src="public/fingerprint.png" />
+            <img class="project-gif" src="public/exposure.jpg" />
+        </div>
+    </div>
+    <div id="sm-2" class="project fade-on-scroll">
+        <div class="project-images">
+            <img class="project-background" src="public/fingerprint.png" />
+            <img class="project-gif" src="public/exposure.jpg" />
+        </div>
+        <div class="project-details">
+            <div class="project-num">
+                <div class="underliner"></div>
+                <p class="project-num-info">03/03</p>
+            </div>
+            <p class="project-name">EXPOSURE</p>
+            <p class="project-description">A social-media-adjacent site intended to expose users to new ideas, and to act as an "anti-algorithm". In a world that's slowly feeding everyone the same information there must be a way to escape this echo-chamber</p>
+            <div class="project-ext-links">
+                <a class="project-live">Live site</a>
+                <a class="project-github"></a>
+            </div>
+        </div>
     </div>
     <script>
         const landingScreen = document.getElementById('landing');
@@ -59,7 +114,70 @@
         
         setTimeout(() => {
           landingScreen.style.display = 'none';
-        }, 1000); // 5000 milliseconds = 5 seconds
+        }, 1000);
+
+        $(window).scroll(function() {
+            $('.fade-on-scroll').each(function() {
+                let elementTop = $(this).offset().top;
+                let windowBottom = $(window).scrollTop() + $(window).height();
+                if (elementTop + 300 < windowBottom) {
+                    $(this).animate({ opacity: 1 }, 1500);
+                }
+            });
+        });
+
+        let lastScrollTop = 0; // Track last scroll position
+        let lastActiveColor = '#181818'; // Store the last valid background color
+
+        $(window).scroll(function() {
+            let scrollTop = $(window).scrollTop();
+            let windowBottom = scrollTop + $(window).height();
+            let inView = false; // Track if any project is in view
+
+            $('.project').each(function(index) {
+                let elementTop = $(this).offset().top;
+                let elementBottom = elementTop + $(this).outerHeight();
+                let projectId = $(this).attr('id');
+
+                // Check if 500px of the element is inside the viewport
+                let scrolledEnoughDown = windowBottom - 500 > elementTop; // Scrolling down
+                let scrolledEnoughUp = scrollTop + 500 < elementBottom; // Scrolling up
+
+                if (scrolledEnoughDown && scrolledEnoughUp) {
+                    inView = true; // A valid project is visible
+
+                    let newColor;
+                    switch (projectId) {
+                        case "gerald":
+                            newColor = '#fc9fa5';
+                            break;
+                        case "exposure":
+                            newColor = '#b3cffc';
+                            break;
+                        case "sm-2":
+                            newColor = '#abfc9f';
+                            break;
+                    }
+
+                    // Only update if the color actually changes
+                    if (newColor && newColor !== lastActiveColor) {
+                        $('body').css('background-color', newColor);
+                        lastActiveColor = newColor; // Update last active color
+                    }
+
+                    return false; // Stop checking further elements
+                }
+            });
+
+            // Only revert to the default color when the user is NOT within 500px of the first project element
+            let firstProjectTop = $('.project').first().offset().top;
+            if (!inView && scrollTop < firstProjectTop) {
+                $('body').css('background-color', '#181818');
+                lastActiveColor = '#181818'; // Update last active color to default
+            }
+
+            lastScrollTop = scrollTop; // Update scroll position
+        });
       </script>
 </body>
 </html>

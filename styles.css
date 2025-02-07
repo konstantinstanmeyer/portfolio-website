@@ -28,23 +28,29 @@ html {
 body {
     padding: 0;
     margin: 0;
-    font-family: "Teko" !important;
     font-weight: 300;
     font-style: normal;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     width: 100vw;
     background-color: #181818;
+    transition: 0.2s linear all;
+}
+
+.fade-on-scroll {
+    opacity: 0;
 }
 
 #navbar {
-    width: 55rem;
+    width: 67rem;
     height: 7rem;
-    background: #181818;
     display: flex; 
+    font-family: "Teko" !important;
     flex-direction: row;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #name {
@@ -84,13 +90,17 @@ body {
 }
 
 #info {
-    width: 55rem;
+    width: 67rem;
     margin-top: 4rem;
     position: relative;
+    font-family: "Rubik";
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #portrait-container img {
-    width: 20rem;
+    width: 30rem;
+    height: 45.7rem;
 }
 
 #portrait-container {
@@ -104,21 +114,23 @@ body {
 }
 
 #personal-info {
-    width: 35rem;
-    height: 31rem;
+    width: 40rem;
+    height: 45.7rem;
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    justify-content: center;
     margin-left: 5rem;
 }
 
 #personal-description {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: 500;
     color: rgb(235, 235, 235);
-    line-height: 2.8rem;
+    line-height: 3.5rem;
     width: 100%;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 #personal-divider {
@@ -131,11 +143,16 @@ body {
 
 #additional-info {
     color: rgb(122, 122, 122);
-    font-size: 1.5rem;
-    width: 20rem;
+    font-size: 1.3rem;
+    width: 25rem;
     height: fit-content;
     margin-bottom: 0;
     margin-top: 2rem;
+    font-weight: 400;
+}
+
+#additional-info span {
+    color: rgb(4, 89, 4);
 }
 
 #social-links {
@@ -153,4 +170,146 @@ body {
 
 #social-links img:hover {
     filter: invert(22%) sepia(0%) saturate(4562%) hue-rotate(332deg) brightness(85%) contrast(86%);
+}
+
+.project {
+    /* outline:red 1px solid; */
+    width: 67rem;
+    height: 100vh;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+    font-family: "Raleway";
+    margin-bottom: 8rem;
+}
+
+.project-images {
+    width: 42rem;
+    height: 42rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-gif {
+    width: 80%;
+}
+
+.project-background {
+    filter: opacity(5%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#gerald .project-name {
+    color: #4a2f30;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+#exposure .project-name {
+    color: #3a4352;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+#sm-2 .project-name {
+    color: #3c5737;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+#gerald .project-num {
+    color: #96020b;
+    display: flex;
+    height: 18.5px;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Rubik";
+    font-size: 0.7rem;
+}
+
+#exposure .project-num {
+    color: #00368c;
+    display: flex;
+    height: 18.5px;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Rubik";
+    font-size: 0.7rem;
+}
+
+#sm-2 .project-num {
+    color: #128501;
+    display: flex;
+    height: 18.5px;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Rubik";
+    font-size: 0.7rem;
+}
+
+#gerald .underliner {
+    height: 1.5px;
+    background-color: #853c41;
+    margin-right: 10px;
+    width: 25px;
+    margin-top: auto;
+    margin-bottom: 4px;
+}
+
+#exposure .underliner {
+    height: 1.5px;
+    background-color: #00368c;
+    margin-right: 10px;
+    width: 25px;
+    margin-top: auto;
+    margin-bottom: 4px;
+}
+
+#sm-2 .underliner {
+    height: 1.5px;
+    background-color: #128501;
+    margin-right: 10px;
+    width: 25px;
+    margin-top: auto;
+    margin-bottom: 4px;
+}
+
+.project-details {
+    width: 20rem;
+    font-weight: 600;
+}
+
+.project-description {
+    color: rgb(0, 0, 0, 0.55);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.project-ext-links {
+
+}
+
+.project-live {
+    width: fit-content;
+    height: fit-content;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: rgb(255, 255,255,0.9);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgb(0,0,0,0.3);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.8rem;
+    border-radius: 5px 5px 5px 5px;
 }
