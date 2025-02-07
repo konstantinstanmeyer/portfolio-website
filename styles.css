@@ -214,16 +214,28 @@ body {
     letter-spacing: 1px;
 }
 
+#gerald .project-name span {
+    font-size: 1rem;
+}
+
 #exposure .project-name {
     color: #3a4352;
     font-size: 2rem;
     letter-spacing: 1px;
 }
 
+#exposure .project-name span {
+    font-size: 1rem;
+}
+
 #sm-2 .project-name {
     color: #3c5737;
     font-size: 2rem;
     letter-spacing: 1px;
+}
+
+#sm-2 .project-name span {
+    font-size: 1rem;
 }
 
 #gerald .project-num {
