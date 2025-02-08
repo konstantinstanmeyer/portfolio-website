@@ -81,12 +81,12 @@
             <p>I excel at making ideas clear and ensuring smooth collaboration. Effective communication has been the key to some of the most rewarding partnerships.</p>
         </div>
         <div class="skills-block fade-on-scroll">
-            <p id="quote">"I appreciated the effort and attention to detail Wilian utilized in even the more secondary aspects of his designs to provide a clean, snappy user experience - along with the fact that he was always open to engineering feedback and were willing to make tradeoffs."</p>
+            <p id="quote"></p>
             <div id="quote-profile">
                 <img src="public/profile-example.png" id="quote-image" />
                 <div id="quote-details">
-                    <p id="quote-name">Jane Doe</p>
-                    <p id="quote-occupation">Software Engineer - Google</p>
+                    <p id="quote-name"></p>
+                    <p id="quote-occupation"></p>
                 </div>
             </div>
         </div>
@@ -148,7 +148,71 @@
     <script>
         const landingScreen = document.getElementById('landing');
         const mainContent = document.getElementById('content');
-        
+
+        const testimonials = [
+            {
+                text: `"I appreciated the effort and attention to detail Wilian utilized in even the more secondary aspects of his designs..."`,
+                author: "Jane Doe",
+                occupation: "Software Engineer - Google",
+                image: "public/profile-example.png"
+            },
+            {
+                text: `"Wilian's design skills are top-notch, and his ability to collaborate with engineers ensures a seamless workflow!"`,
+                author: "John Smith",
+                occupation: "Lead Designer - Facebook",
+                image: "public/profile-example-2.png"
+            },
+            {
+                text: `"Working with Wilian was a pleasure! He always considered user experience while balancing business goals."`,
+                author: "Emily Davis",
+                occupation: "Product Manager - Apple",
+                image: "public/profile-example-3.png"
+            }
+        ]
+
+        let currentIndex = 0;
+
+        function updateTestimonial() {
+    const quote = $("#quote");
+    const quoteProfile = $("#quote-profile");
+    const quoteDetails = $("#quote-details");
+
+    // Step 1: Apply fade-out effect using opacity (CSS transitions handle animation)
+    quote.css("opacity", 0);
+    quoteProfile.css("opacity", 0);
+    quoteDetails.css("opacity", 0);
+
+    // Step 2: Wait for fade-out animation to finish before updating content
+    setTimeout(() => {
+        const testimonial = testimonials[currentIndex];
+
+        // Update content
+        quote.text(testimonial.text);
+        $("#quote-name").text(testimonial.author);
+        $("#quote-occupation").text(testimonial.occupation);
+        $("#quote-image").attr("src", testimonial.image);
+
+        // Force a reflow to ensure fade-in starts immediately
+        quote[0].offsetHeight; 
+        quoteProfile[0].offsetHeight; 
+        quoteDetails[0].offsetHeight;
+
+        // Step 3: Fade back in simultaneously
+        quote.css("opacity", 1);
+        quoteProfile.css("opacity", 1);
+        quoteDetails.css("opacity", 1);
+
+        // Move to the next testimonial
+        currentIndex = (currentIndex + 1) % testimonials.length;
+    }, 1000); // Matches CSS transition time
+}
+
+// Initialize first testimonial
+updateTestimonial();
+
+// Rotate testimonials every 5 seconds
+setInterval(updateTestimonial, 5000);
+
         setTimeout(() => {
           landingScreen.style.display = 'none';
         }, 1000);

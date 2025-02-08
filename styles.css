@@ -10,7 +10,7 @@ html {
     background-color: black;
     position: fixed;
     z-index: 50;
-    transition: 1s linear;
+    transition: 1s linear all;
 }
 
 #landing-container {
@@ -289,6 +289,23 @@ body {
     line-height: 1.2rem;
 }
 
+#quote {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+#quote-profile, #quote-details {
+    opacity: 1;
+    transition: opacity 0.45s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
 .project {
     /* outline:red 1px solid; */
     width: 67rem;
@@ -455,3 +472,4 @@ body {
     font-weight: 500;
     letter-spacing: 1px;
 }
+
