@@ -1,6 +1,7 @@
 html {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 #landing {
@@ -89,7 +90,7 @@ body {
     color: rgb(124, 124, 124);
 }
 
-#info {
+#information {
     width: 67rem;
     margin-top: 4rem;
     position: relative;
@@ -172,6 +173,122 @@ body {
     filter: invert(22%) sepia(0%) saturate(4562%) hue-rotate(332deg) brightness(85%) contrast(86%);
 }
 
+#skills {
+    height: 100vh;
+    width: 67rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    /* background-color: orange; */
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items:center;
+}
+
+.skills-block {
+    width: 30rem;
+    height: 43vh;
+    /* background-color: white; */
+    /* outline: 1px solid red; */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    color: rgb(202, 202, 202);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#skills-container {
+    height: 100%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.skills-block h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.skills-block p {
+    line-height: 2rem;
+}
+
+.skill-row {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#skill-row-1{
+    margin-left: auto;
+}
+
+#skill-row-2{
+    margin-right: auto;
+}
+
+#skill-row-3{
+    margin-left: auto;
+}
+
+#skills-images img {
+    width: 3.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    filter: invert(47%) sepia(24%) saturate(16%) hue-rotate(16deg) brightness(96%) contrast(92%);
+}
+
+#quote {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding:0;
+    margin: 0;
+}
+
+#quote-image {
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+#quote-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#quote-details {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+#quote-name {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+}
+
+#quote-occupation {
+    padding: 0;
+    margin:0;
+    font-weight: 300;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+}
+
 .project {
     /* outline:red 1px solid; */
     width: 67rem;
@@ -182,6 +299,10 @@ body {
     flex-direction: row;
     font-family: "Raleway";
     margin-bottom: 8rem;
+}
+
+.project a {
+    text-decoration: none;
 }
 
 .project-images {
@@ -212,30 +333,36 @@ body {
     color: #4a2f30;
     font-size: 2rem;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 #gerald .project-name span {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 #exposure .project-name {
     color: #3a4352;
     font-size: 2rem;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 #exposure .project-name span {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 #sm-2 .project-name {
     color: #3c5737;
     font-size: 2rem;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 #sm-2 .project-name span {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 #gerald .project-num {
@@ -302,7 +429,7 @@ body {
 
 .project-description {
     color: rgb(0, 0, 0, 0.55);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
@@ -322,6 +449,9 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-family: "Rubik";
     border-radius: 5px 5px 5px 5px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
