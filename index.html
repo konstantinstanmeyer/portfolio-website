@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="skills-block fade-on-scroll">
+        <div class="skills-block fade-on-scroll early-fade">
             <h3>Here’s what others have shared about our work together...</h3>
             <p>I excel at making ideas clear and ensuring smooth collaboration. Effective communication has been the key to some of the most rewarding partnerships.</p>
         </div>
@@ -91,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div id="gerald" class="project fade-on-scroll">
+    <div id="gerald" class="project fade-on-scroll early-fade">
         <div class="project-images">
             <img class="project-background" src="public/fingerprint.png" />
             <img class="project-gif" src="public/gerald-elias.png" />
@@ -157,7 +157,7 @@
             $('.fade-on-scroll').each(function() {
                 let elementTop = $(this).offset().top;
                 let windowBottom = $(window).scrollTop() + $(window).height();
-                if (elementTop + 300 < windowBottom) {
+                if (elementTop + 300 < windowBottom || elementTop < windowBottom && $(this).attr('class') === "early-fade") { // OR condition triggers the fade-in for the second group of the skill section to aesthetically function like expected
                     $(this).animate({ opacity: 1 }, 1500);
                 }
             });
