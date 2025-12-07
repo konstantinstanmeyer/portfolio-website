@@ -93,6 +93,9 @@ body[data-section="sm-2"] {
     letter-spacing: 0.05em;
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 110px;
 }
 
 .landing-letter:nth-child(2) {
@@ -100,8 +103,8 @@ body[data-section="sm-2"] {
 }
 
 .landing-line {
-    width: 60px;
-    height: 1px;
+    width: 120px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
     animation: expandLine 1s ease 0.5s forwards;
     transform: scaleX(0);
