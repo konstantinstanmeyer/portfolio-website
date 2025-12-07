@@ -501,7 +501,7 @@ body[data-section="sm-2"] #navbar {
     gap: calc(var(--spacing-unit) * 8);
 }
 
-.project:nth-child(even) {
+.project:nth-child(odd) {
     flex-direction: row-reverse;
 }
 
