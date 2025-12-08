@@ -91,19 +91,13 @@
                 </div>
             </div>
         </div>
-        <div class="skills-block fade-on-scroll early-fade">
-            <h3>Here's what others have shared about our work together...</h3>
-            <p>I excel at making ideas clear and ensuring smooth collaboration. Effective communication has been the key to some of the most rewarding partnerships.</p>
+        <div class="skills-block fade-on-scroll">
+            <h3>Great products start with people.</h3>
+            <p>Understanding user motivations, frustrations, and behaviors guides every decision I make. I believe in building solutions that create genuine value—not just features.</p>
         </div>
-        <div class="skills-block testimonial-block fade-on-scroll">
-            <blockquote id="quote"></blockquote>
-            <div id="quote-profile">
-                <img src="public/profile-example.png" id="quote-image" alt="Testimonial author" />
-                <div id="quote-details">
-                    <cite id="quote-name"></cite>
-                    <span id="quote-occupation"></span>
-                </div>
-            </div>
+        <div class="skills-block fade-on-scroll">
+            <h3>Maintained Creative + Technical Focus.</h3>
+            <p>Working behind a camera trained me to pay attention to spacing, contrast, and detail. Those habits still guide the way I structure layouts and evaluate interface clarity.</p>
         </div>
     </section>
     <div id="section-indicator">
@@ -193,59 +187,6 @@
                 landingScreen.style.display = 'none';
             }, 800);
         }, 1500);
-
-        const testimonials = [
-            {
-                text: '"I appreciated the effort and attention to detail Konstantin utilized in even the more secondary aspects of his designs..."',
-                author: "Jane Doe",
-                occupation: "Software Engineer — Google",
-                image: "public/profile-example.png"
-            },
-            {
-                text: '"Konstantin\'s design skills are top-notch, and his ability to collaborate with engineers ensures a seamless workflow!"',
-                author: "John Smith",
-                occupation: "Lead Designer — Facebook",
-                image: "public/profile-example-2.png"
-            },
-            {
-                text: '"Working with Konstantin was a pleasure! He always considered user experience while balancing business goals."',
-                author: "Emily Davis",
-                occupation: "Product Manager — Apple",
-                image: "public/profile-example-3.png"
-            }
-        ];
-
-        let currentIndex = 0;
-
-        function updateTestimonial() {
-            const quote = document.getElementById('quote');
-            const quoteProfile = document.getElementById('quote-profile');
-            const quoteName = document.getElementById('quote-name');
-            const quoteOccupation = document.getElementById('quote-occupation');
-            const quoteImage = document.getElementById('quote-image');
-
-            // Fade out
-            quote.style.opacity = '0';
-            quoteProfile.style.opacity = '0';
-
-            setTimeout(() => {
-                const testimonial = testimonials[currentIndex];
-                
-                quote.textContent = testimonial.text;
-                quoteName.textContent = testimonial.author;
-                quoteOccupation.textContent = testimonial.occupation;
-                quoteImage.src = testimonial.image;
-
-                // Fade in
-                quote.style.opacity = '1';
-                quoteProfile.style.opacity = '1';
-
-                currentIndex = (currentIndex + 1) % testimonials.length;
-            }, 600);
-        }
-
-        updateTestimonial();
-        setInterval(updateTestimonial, 5000);
 
         // Scroll fade-in animation
         const observerOptions = {
