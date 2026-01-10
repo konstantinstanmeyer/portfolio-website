@@ -11,6 +11,9 @@
     <title>Konstantin Stanmeyer | Full-Stack Developer</title>
 </head>
 <body id="content">
+    <div id="loader">
+        <div class="loader-circle"></div>
+    </div>
     <nav id="navbar">
         <div id="name">
             <h3>KONSTANTIN</h3>
@@ -110,17 +113,17 @@
     <section id="gerald" class="project fade-on-scroll early-fade" data-color="gerald">
         <div class="project-images">
             <div class="project-background-pattern"></div>
-            <img class="project-gif" src="public/maria-okonkwo.png" alt="Mira Okonkwo website preview" />
+            <img class="project-gif" src="public/gerald-elias.png" alt="Gerald Elias website preview" />
         </div>
         <div class="project-details">
             <div class="project-num">
                 <div class="underliner"></div>
                 <p class="project-num-info">01 / 03</p>
             </div>
-            <h2 class="project-name">Mira Okonkwo <span>Client</span></h2>
-            <p class="project-description">Designed and implemented an interactive UI prototype for a hypothetical author website using JavaScript and plain CSS.</p>
+            <h2 class="project-name">Gerald Elias <span>Client</span></h2>
+            <p class="project-description">An extensive site created for mystery author and musician Gerald Elias. Utilized to market books and events, and giving a digestible experience to learn about the life and work of a tenured creator.</p>
             <div class="project-ext-links">
-                <a href="https://local-author.vercel.app/" target="_blank" class="project-live">
+                <a href="https://www.mysteriesandmusic.com/" target="_blank" class="project-live">
                     <span>View Live</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
@@ -130,17 +133,17 @@
     <section id="exposure" class="project fade-on-scroll" data-color="exposure">
         <div class="project-images">
             <div class="project-background-pattern"></div>
-            <img class="project-gif" src="public/gerald-elias.png" alt="Gerald Elias website preview" />
+            <img class="project-gif" src="public/maria-okonkwo.png" alt="Mira Okonkwo website preview" />
         </div>
         <div class="project-details">
             <div class="project-num">
                 <div class="underliner"></div>
                 <p class="project-num-info">02 / 03</p>
             </div>
-            <h2 class="project-name">Gerald Elias <span>Client</span></h2>
-            <p class="project-description">An extensive site created for mystery author and musician Gerald Elias. Utilized to market books and events, and giving a digestible experience to learn about the life and work of a tenured creator.</p>
+            <h2 class="project-name">Mira Okonkwo <span>Personal</span></h2>
+            <p class="project-description">Designed and implemented an interactive UI prototype for a hypothetical author website using JavaScript and plain CSS.</p>
             <div class="project-ext-links">
-                <a href="https://www.mysteriesandmusic.com/" target="_blank" class="project-live">
+                <a href="https://local-author.vercel.app/" target="_blank" class="project-live">
                     <span>View Live</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                 </a>
@@ -167,6 +170,12 @@
             </div>
         </div>
     </section>
+    <!-- <section id="see-more fade-on-scroll">
+        <div id="see-more-content">
+            <h3>Want to see more of my work?</h3>
+            <button>View More Projects</button>
+        </div>
+    </section> -->
     <footer id="contact">
         <div class="footer-content">
             <h2>Let's work together</h2>
@@ -179,14 +188,14 @@
     </footer>
     <script>
         // Landing animation
-        const landingScreen = document.getElementById('landing');
+        const loader = document.getElementById('loader');
         
         setTimeout(() => {
-            landingScreen.classList.add('fade-out');
+            loader.classList.add('fade-out');
             setTimeout(() => {
-                landingScreen.style.display = 'none';
-            }, 800);
-        }, 1500);
+                loader.style.display = 'none';
+            }, 500);
+        }, 1000);
 
         // Scroll fade-in animation
         const observerOptions = {
