@@ -15,3 +15,9 @@ export interface Project {
   image: string
   images?: string[]
 }
+
+export const projects: Project[] = [
+
+]
+
+export const featuredProjects = projects.slice(0, 3)
