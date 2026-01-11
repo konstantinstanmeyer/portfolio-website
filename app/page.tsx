@@ -21,13 +21,13 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="max-w-[1100px] mx-auto px-6 pt-40 pb-24 min-h-screen flex items-center">
+      <section className="max-w-275 mx-auto px-6 pt-40 pb-24 min-h-screen flex items-center">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12 w-full">
-          <FadeIn className="max-w-[500px] lg:text-left text-center">
+          <FadeIn className="max-w-125 lg:text-left text-center">
             <h1 className="font-display text-4xl md:text-5xl font-normal leading-tight tracking-tight text-[--color-text-primary] mb-6">
               Konstantin builds full-stack solutions that just work.
             </h1>
-            <div className="w-[60px] h-px bg-[--color-accent] mb-6 lg:mx-0 mx-auto" />
+            <div className="w-15 h-px bg-[--color-accent] mb-6 lg:mx-0 mx-auto" />
             <p className="font-accent text-xl italic text-[--color-text-secondary] leading-relaxed mb-6">
               I design applications and sites for businesses and personal interests as a{' '}
               <span className="text-[--color-accent] not-italic font-medium">freelance developer</span>
