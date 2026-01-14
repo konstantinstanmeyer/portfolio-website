@@ -4,23 +4,23 @@ import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn'
 import { SocialLinks } from '@/components/SocialLinks'
 import { SkillIcon } from '@/components/SkillIcon'
 import { featuredProjects } from '@/lib/projects'
+import { PhotoCarousel } from '@/components/PhotoCarousel'
 
 const skills = [
-  { name: 'React', icon: '/images/languages/react.png' },
-  { name: 'JavaScript', icon: '/images/languages/javascript.png' },
-  { name: 'TypeScript', icon: '/images/languages/typescript.png' },
-  { name: 'Node.js', icon: '/images/languages/nodejs.png' },
-  { name: 'Next.js', icon: '/images/languages/nextjs.png' },
-  { name: 'Redux', icon: '/images/languages/redux.png' },
-  { name: 'PostgreSQL', icon: '/images/languages/postgresql.png' },
-  { name: 'Rails', icon: '/images/languages/rails.png' },
-  { name: 'AWS', icon: '/images/languages/aws.png' },
+  { name: 'React', icon: '/react.png' },
+  { name: 'JavaScript', icon: '/javascript.png' },
+  { name: 'TypeScript', icon: '/typescript.png' },
+  { name: 'Node.js', icon: '/nodejs.png' },
+  { name: 'Next.js', icon: '/nextjs.png' },
+  { name: 'Redux', icon: '/redux.png' },
+  { name: 'PostgreSQL', icon: '/postgresql.png' },
+  { name: 'Rails', icon: '/rails.png' },
+  { name: 'AWS', icon: '/aws.png' },
 ]
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
       <section className="max-w-275 mx-auto px-6 pt-40 pb-24 min-h-screen flex items-center">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12 w-full">
           <FadeIn className="max-w-125 lg:text-left text-center">
@@ -39,7 +39,7 @@ export default function Home() {
             <div className="relative w-[300px] h-[400px] lg:w-[380px] lg:h-[500px] overflow-hidden">
               <div className="absolute inset-0 border border-[--color-accent] opacity-30 translate-x-4 translate-y-4 -z-10" />
               <Image
-                src="/images/portrait.jpeg"
+                src="/portrait.jpeg"
                 alt="Konstantin Stanmeyer"
                 fill
                 className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
@@ -49,8 +49,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
-      {/* Skills Section */}
       <section id="skills" className="max-w-[1100px] mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <FadeIn>
@@ -92,8 +90,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
-      {/* Featured Projects Section */}
       <section className="max-w-[1100px] mx-auto px-6 py-24">
         <FadeIn>
           <div className="section-label">
@@ -132,10 +128,10 @@ export default function Home() {
                   <p className="text-sm text-[--color-text-secondary]">{project.type}</p>
                 </div>
               </Link>
+              
             </StaggerItem>
           ))}
         </StaggerContainer>
-
         <div className="flex justify-center">
           <Link href="/projects" className="btn-primary group">
             <span>View All Projects</span>
@@ -151,69 +147,42 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* Personal / Photography Section */}
       <section className="py-24 bg-gradient-to-b from-transparent via-[rgba(201,162,39,0.03)] to-transparent">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <FadeIn className="max-w-[480px] lg:text-left text-center lg:mx-0 mx-auto">
-              <div className="section-label lg:justify-start justify-center">
-                <span className="section-label-line" />
-                <span className="section-label-text">Beyond Code</span>
-              </div>
-              <h2 className="font-display text-3xl md:text-4xl font-normal text-[--color-text-primary] mb-6">
-                Through the Lens
-              </h2>
-              <p className="text-[--color-text-secondary] leading-relaxed mb-6">
-                Before I wrote my first line of code, I was composing frames. Photography taught me 
-                that every pixel matters—that the space between elements tells a story just as 
-                much as the elements themselves. This perspective shapes how I approach design: 
-                with intention, with patience, and with an eye for the moments that make interfaces 
-                feel alive.
-              </p>
-              <Link 
-                href="/photography" 
-                className="inline-flex items-center gap-2 text-[--color-accent] font-medium hover:gap-4 transition-all duration-200"
-              >
-                <span>Explore Gallery</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </Link>
-            </FadeIn>
-
-            <FadeIn delay={0.2} className="relative">
-              <div className="grid grid-cols-3 gap-3">
-                <div className="row-span-2 aspect-[3/4] relative overflow-hidden rounded">
-                  <Image
-                    src="/photos/photo-1.jpg"
-                    alt="Photography sample"
-                    fill
-                    className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-500 hover:scale-105"
-                  />
-                </div>
-                <div className="aspect-square relative overflow-hidden rounded">
-                  <Image
-                    src="/photos/photo-2.jpg"
-                    alt="Photography sample"
-                    fill
-                    className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-500 hover:scale-105"
-                  />
-                </div>
-                <div className="aspect-square relative overflow-hidden rounded">
-                  <Image
-                    src="/photos/photo-3.jpg"
-                    alt="Photography sample"
-                    fill
-                    className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-500 hover:scale-105"
-                  />
-                </div>
-              </div>
-              <div className="absolute -bottom-5 -right-5 w-[120px] h-[120px] border border-[--color-accent] opacity-20 rounded-full -z-10" />
-            </FadeIn>
-          </div>
+  <div className="max-w-[1400px] mx-auto px-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <FadeIn className="max-w-[480px] lg:text-left text-center lg:mx-0 mx-auto">
+        <div className="section-label lg:justify-start justify-center">
+          <span className="section-label-line" />
+          <span className="section-label-text">Beyond Code</span>
         </div>
-      </section>
+        <h2 className="font-display text-3xl md:text-4xl font-normal text-[--color-text-primary] mb-6">
+          Through the Lens
+        </h2>
+        <p className="text-[--color-text-secondary] leading-relaxed mb-6">
+          Before I wrote my first line of code, I was composing frames. Photography taught me 
+          that every pixel matters—that the space between elements tells a story just as 
+          much as the elements themselves. This perspective shapes how I approach design: 
+          with intention, with patience, and with an eye for the moments that make interfaces 
+          feel alive.
+        </p>
+        <Link 
+          href="/photography" 
+          className="inline-flex items-center gap-2 text-[--color-accent] font-medium hover:gap-4 transition-all duration-200"
+        >
+          <span>Explore Gallery</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </Link>
+      </FadeIn>
+
+      <FadeIn delay={0.2} className="relative">
+        <PhotoCarousel />
+        <div className="absolute -bottom-5 -right-5 w-[120px] h-[120px] border border-[--color-accent] opacity-20 rounded-full -z-10" />
+      </FadeIn>
+    </div>
+  </div>
+</section>
     </>
   )
 }
